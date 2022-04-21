@@ -4,7 +4,7 @@
   },
   "/api/tarifacao/atual/momento_SAIDA_POR_PERIODO": {
     "SAIDA_POR_PERIODO"
-  }
+  },
   "teste1": [
     { "id": 1, "nome": "Marcela da Silva", "curso": 1 },
     { "id": 2, "nome": "José Luiz Felipe", "curso": 2 },

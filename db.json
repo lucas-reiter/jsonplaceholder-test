@@ -1,18 +1,78 @@
 {
-  "/api/tarifacao/atual/momento_ENTRADA": {
-    "ENTRADA"
-  },
-  "/api/tarifacao/atual/momento_SAIDA_POR_PERIODO": {
-    "SAIDA_POR_PERIODO"
-  },
-  "teste1": [
-    { "id": 1, "nome": "Marcela da Silva", "curso": 1 },
-    { "id": 2, "nome": "José Luiz Felipe", "curso": 2 },
-    { "id": 3, "nome": "Paulo Rogério", "curso": 3 },
-    { "id": 4, "nome": "Felipe da Cunha", "curso": 1 },
-    { "id": 5, "nome": "Luiza Cardoso Pereira", "curso": 1 }
-  ],
-  "teste2": {
-    "nome": "Code Prestige"
-  }
+	"/api/tarifacao/atual/momento_ENTRADA": {
+		"value": "ENTRADA"
+	},
+	"/api/tarifacao/atual/momento_SAIDA_POR_PERIODO": {
+		"value": "SAIDA_POR_PERIODO"
+	},
+	"/api/pagamento/v2/consultarPlaca/ABC1234/NACIONAL": {
+		"placa": "ABC1234",
+		"tipoPlaca": "NACIONAL",
+		"classificacao": {
+			"oid": 1,
+			"descricao": "AUTOMOVEL\\REBOQUE"
+		},
+		"isento": false,
+		"faltaPassagemSaida": true,
+		"quantidadeDividaAtiva": 0,
+		"calculo": {
+			"taxas": null,
+			"horarioMaximoSaida": null,
+			"quantidadeTaxas": 3,
+			"quantidadeCreditos": 0,
+			"valorTaxas": 1056.85,
+			"valorCreditos": 0,
+			"valorTotal": 1056.85
+		}
+	},
+	" /api/pagamento/v2/calcularPagamento/saidaPorPeriodo": {
+		"taxas": [
+			{
+				"oid": 1234,
+				"dataInicio": 1649796684,
+				"dataFim": 1649796684,
+				"valor": 10.0,
+				"status": "CONFIRMADA"
+			},
+			{
+				"oid": 1234,
+				"dataInicio": 1649796684,
+				"dataFim": 1649796684,
+				"valor": 10.0,
+				"status": "CONFIRMADA"
+			},
+			{
+				"oid": 1234,
+				"dataInicio": 1649796684,
+				"dataFim": 1649796684,
+				"valor": 10.0,
+				"status": "PREVISTA"
+			},
+			{
+				"oid": 1234,
+				"dataInicio": 1649796684,
+				"dataFim": 1649796684,
+				"valor": 10.0,
+				"status": "PREVISTA"
+			}
+		],
+		"horarioMaximoSaida": 1649796684000,
+		"quantidadeTaxas": 4,
+		"quantidadeCreditos": 2,
+		"valorTaxas": 1056.55,
+		"valorCreditos": 200.3,
+		"valorTotal": 1256.85
+	},
+	"/api/pagamento/v2/gerarPagamentoSite": {
+		"pagamento": 12345,
+		"oidCreditos": [
+			1234,
+			1235
+		],
+		"boleto": {
+			"oid": 12345,
+			"linhaDigitavel": "linha digitável do boletão",
+			"codigoDownload": "como se fosse um token pra download"
+		}
+	}
 }
